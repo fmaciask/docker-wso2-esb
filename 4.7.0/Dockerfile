@@ -4,7 +4,7 @@ FROM java:openjdk-8-jre
 MAINTAINER Juan Carlos García Peláez
 
 ENV WSO2_URL=http://dist.wso2.org/maven2/org/wso2/esb/wso2esb
-ENV WSO2_SOFT_VER=4.8.0
+ENV WSO2_SOFT_VER=4.7.0
 RUN  \
 	mkdir -p /opt/wso2 && \
 	wget -P /opt/wso2 $WSO2_URL/$WSO2_SOFT_VER/wso2esb-$WSO2_SOFT_VER.zip && \
@@ -12,6 +12,4 @@ RUN  \
     rm /opt/wso2/wso2esb-$WSO2_SOFT_VER.zip
 
 EXPOSE 9443
-CMD ["/opt/wso2esb-4.8.0/bin/wso2server.sh"]
-
-
+CMD ["/opt/wso2esb-4.7.0/bin/wso2server.sh"]
