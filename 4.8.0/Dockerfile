@@ -1,7 +1,6 @@
 FROM java:openjdk-8-jre
 
-# Maintainer
-MAINTAINER Juan Carlos García Peláez
+MAINTAINER juancarlosgpelaez@gmail.com
 
 ENV WSO2_URL=http://dist.wso2.org/maven2/org/wso2/esb/wso2esb
 ENV WSO2_SOFT_VER=4.8.0
@@ -11,7 +10,11 @@ RUN  \
     unzip /opt/wso2/wso2esb-$WSO2_SOFT_VER.zip -d /opt/wso2 && \
     rm /opt/wso2/wso2esb-$WSO2_SOFT_VER.zip
 
+# ESB https port
 EXPOSE 9443
-CMD ["/opt/wso2esb-4.8.0/bin/wso2server.sh"]
+# ESB http pass-through transport port
+EXPOSE 8280
+# ESB https pass-through transport port
+EXPOSE 8243
 
-
+CMD ["/opt/wso2/wso2esb-4.8.0/bin/wso2server.sh"]
