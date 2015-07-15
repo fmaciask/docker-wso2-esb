@@ -1,4 +1,4 @@
-FROM java:openjdk-8-jre
+FROM java:openjdk-7
 
 MAINTAINER juancarlosgpelaez@gmail.com
 
@@ -17,4 +17,5 @@ EXPOSE 8280
 # ESB https pass-through transport port
 EXPOSE 8243
 
+ENV JAVA_HOME=/usr
 CMD ["/opt/wso2/wso2esb-4.8.1/bin/wso2server.sh"]
