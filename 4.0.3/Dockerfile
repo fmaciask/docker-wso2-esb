@@ -1,4 +1,4 @@
-FROM java:openjdk-7
+FROM java:openjdk-6
 
 MAINTAINER juancarlosgpelaez@gmail.com
 
